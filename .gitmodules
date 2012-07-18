@@ -13,3 +13,9 @@
 [submodule "vim/vim/bundle/supertab"]
 	path = vim/vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/fugitive"]
+	path = vim/vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
