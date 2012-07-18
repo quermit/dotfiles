@@ -9,7 +9,12 @@ syntax on
 scriptencoding utf-8
 filetype plugin on
 
+" solarized color scheme
 set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
+
 set mouse=a
 set history=1000
 set backspace=indent,eol,start

@@ -19,3 +19,9 @@
 [submodule "vim/vim/bundle/fugitive"]
 	path = vim/vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim/bundle/solarized"]
+	path = vim/vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim/bundle/checksyntax"]
+	path = vim/vim/bundle/checksyntax
+	url = git://github.com/tomtom/checksyntax_vim.git
