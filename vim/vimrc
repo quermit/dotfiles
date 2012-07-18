@@ -5,36 +5,43 @@ runtime! autoload/pathogen.vim
 silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
+" general
 syntax on
 scriptencoding utf-8
 filetype plugin on
+set mouse=a
+set history=1000
+set backspace=indent,eol,start
+set noerrorbells
+set spell
 
-" solarized color scheme
+" UI
 set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
-set mouse=a
-set history=1000
-set backspace=indent,eol,start
 set ruler
 set showcmd
+set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-" set number
-set noerrorbells
-set nowrap
-set showmatch
-set mat=5
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
+set cursorline
+set number
+set scrolljump=5
+set scrolloff=3
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace"
 
+" formatting
+set nowrap                      " wrap long lines
+set autoindent                  " indent at the same level of the previous line
+set shiftwidth=4                " use indents of 4 spaces
+set expandtab                   " tabs are spaces, not tabs
+set tabstop=4                   " an indentation every four columns
+set softtabstop=4               " let backspace delete indent
+set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 

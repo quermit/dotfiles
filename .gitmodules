@@ -25,3 +25,9 @@
 [submodule "vim/vim/bundle/checksyntax"]
 	path = vim/vim/bundle/checksyntax
 	url = git://github.com/tomtom/checksyntax_vim.git
+[submodule "vim/vim/bundle/pydoc"]
+	path = vim/vim/bundle/pydoc
+	url = git://github.com/fs111/pydoc.vim.git
+[submodule "vim/vim/bundle/pythoncomplete"]
+	path = vim/vim/bundle/pythoncomplete
+	url = git://github.com/mjbrownie/pythoncomplete.vim.git
