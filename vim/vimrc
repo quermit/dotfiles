@@ -1,5 +1,32 @@
+set nocompatible
+
 " pathogen
 runtime! autoload/pathogen.vim
 silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
+
+syntax on
+scriptencoding utf-8
+
+set background=dark
+set mouse=a
+set history=1000
+set backspace=indent,eol,start
+set ruler
+set showcmd
+set incsearch
+set hlsearch
+set showmatch
+set ignorecase
+set number
+set noerrorbells
+set nowrap
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set laststatus=2
 
