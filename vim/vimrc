@@ -18,23 +18,39 @@ set spell
 " UI
 set background=dark
 set t_Co=256
+" let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 colorscheme solarized
 
-set ruler
-set showcmd
+if has('cmdline_info')
+    set ruler                   " show the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+    set showcmd                 " show partial commands in status line and
+                                    " selected characters/lines in visual mode
+endif
+
+if has('statusline')
+    set laststatus=2
+    " Broken down into easily includeable segments
+    set statusline=%<%f\    " Filename
+    set statusline+=%w%h%m%r " Options
+    set statusline+=%{fugitive#statusline()} "  Git Hotness
+    set statusline+=\ [%{&ff}/%Y]            " filetype
+    set statusline+=\ [%{getcwd()}]          " current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+
+set showmode
 set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2
 set cursorline
 set number
 set scrolljump=5
 set scrolloff=3
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace"
 
 " formatting
 set nowrap
@@ -45,4 +61,9 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set pastetoggle=<F12>
+
+" mappings
+let mapleader=','
+nnoremap ; :
+cmap cwd lcd %:p:h
 
