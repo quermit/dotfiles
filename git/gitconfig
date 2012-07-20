@@ -1,0 +1,16 @@
+[user]
+    name = Przemyslaw Gajda
+    email = quermit@gmail.com
+[github]
+    user = quermit
+[color]
+    status = auto
+    branch = auto
+    diff = auto
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    uncommit = reset --soft HEAD^
+
