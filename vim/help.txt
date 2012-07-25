@@ -1,0 +1,88 @@
+VIM - SHORTCUTS AND COMMANDS
+============================
+
+MOVEMENT
+--------
+
+gg      - move to first line of file
+G       - move to last line of file
+
+SEARCH
+------
+
+f<c>    - move cursor to next occurrence of character <c> on the current line
+*       - search forward for word under cursor
+#       - search backwards for word under cursor
+%       - search for paired brace, bracket, etc.
+/word   - search forward for word
+?word   - search backwards for word
+n       - repeat the last search forward
+N       - repeat the last search backwards
+:g//    - list all lines matching the last search
+
+:%s/<old>/<new>/g   - replace all <old> with <new>
+:%s/<old>/<new>/gc  - replace all <old> with <new> with confirmations
+
+MODIFICATION
+------------
+
+r       - replace single character under cursor
+x       - delete single character under cursor
+dd      - delete entire line
+D       - delete until end of line
+
+~       - switch case in highlighted text
+d       - delete highlighted text
+y       - copy highlighted text
+yy      - copy current line
+p       - paste copied text
+J       - join current and next line
+
+MODES
+-----
+
+i       - enter insert mode
+I       - enter insert mode at first character of current line
+A       - enter insert mode at last character of current line
+o       - insert line below and enter insert mode
+
+cc      - delete current line and enter insert mode
+C       - delete until enter of line and enter insert mode
+
+v       - enter visual mode and highlight characters
+V       - enter visual mode and highlight lines
+<C>+v   - enter visual block mode
+o       - switch cursor in highlighted block (visual mode)
+>       - indent highlighted text
+<       - unindent highlighted text
+
+WINDOWS
+-------
+
+<C>+w s     - split current window horizontally
+<C>+w v     - split current window vertically
+<C>+w c     - close current window
+<C>+w <m>   - move to window according to motion <m>
+<C>+w w     - switch between windows
+
+BUFFERS
+-------
+
+:e file     - edit a file in a new buffer
+:bn         - go to next buffer
+:bp         - go to previous buffer
+:bd         - delete a buffer (close file)
+:buffers    - list of open buffers
+:b<n>       - switch to a buffer number <n>
+
+MISC
+----
+
+u       - undo
+U       - undo all changes on current line
+<C>+r   - redo
+.       - repeat last command
+
+m<c>    - set a marker <c>
+'<c>    - move cursor to the line marked by <c>
+
