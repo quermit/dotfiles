@@ -1,11 +1,23 @@
 VIM - SHORTCUTS AND COMMANDS
 ============================
 
+FILES
+-----
+
+:q      - quit
+:w      - save changes
+:q!     - quit without saving changes
+:qw     - save changes and quit
+:w <fn> - write buffer to file <fn>
+:r <fn> - read file <fn> into buffer
+:e <fn> - edit file <fn>
+
 MOVEMENT
 --------
 
 gg      - move to first line of file
 G       - move to last line of file
+:<n>    - move to line number <n> (alternatively: <n>gg)
 
 SEARCH
 ------
@@ -19,6 +31,7 @@ f<c>    - move cursor to next occurrence of character <c> on the current line
 n       - repeat the last search forward
 N       - repeat the last search backwards
 :g//    - list all lines matching the last search
+<C>+O   - go back to where you come from
 
 :%s/<old>/<new>/g   - replace all <old> with <new>
 :%s/<old>/<new>/gc  - replace all <old> with <new> with confirmations
@@ -26,22 +39,36 @@ N       - repeat the last search backwards
 MODIFICATION
 ------------
 
-r       - replace single character under cursor
-x       - delete single character under cursor
-dd      - delete entire line
-D       - delete until end of line
+operators (<op>):
 
-~       - switch case in highlighted text
-d       - delete highlighted text
-y       - copy highlighted text
-yy      - copy current line
-p       - paste copied text
-J       - join current and next line
+c           - change
+d           - delete
+y           - copy
+
+operations:
+
+<op><op>    - apply <op> on entire line
+<op><n><op> - apply <op> on <n> lines
+<op>w       - apply <op> on the current word
+<op><n>w    - apply <op> on <n> words
+<S>+<op>    - apply <op> to the end of the current line
+
+other:
+
+r           - replace single character under cursor
+x           - delete single character under cursor
+J           - join current and next line
+
+~           - switch case in highlighted text
+d           - delete highlighted text
+y           - copy highlighted text
+p           - paste copied text
 
 MODES
 -----
 
 i       - enter insert mode
+a       - enter insert mode and append after the cursor
 I       - enter insert mode at first character of current line
 A       - enter insert mode at last character of current line
 o       - insert line below and enter insert mode
@@ -82,7 +109,10 @@ u       - undo
 U       - undo all changes on current line
 <C>+r   - redo
 .       - repeat last command
+<C>+g   - show file status
 
 m<c>    - set a marker <c>
 '<c>    - move cursor to the line marked by <c>
+
+:!<cmd> - execute an external command <cmd>
 
