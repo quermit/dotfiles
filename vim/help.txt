@@ -23,6 +23,7 @@ SEARCH
 ------
 
 f<c>    - move cursor to next occurrence of character <c> on the current line
+F<c>    - move cursor to previous occurrence of character <c> on the current line
 *       - search forward for word under cursor
 #       - search backwards for word under cursor
 %       - search for paired brace, bracket, etc.
@@ -31,7 +32,8 @@ f<c>    - move cursor to next occurrence of character <c> on the current line
 n       - repeat the last search forward
 N       - repeat the last search backwards
 :g//    - list all lines matching the last search
-<C>+O   - go back to where you come from
+<C>+O   - go back to the older cursor position (:jumps)
+<C>+I   - go to the newer cursor position
 
 :%s/<old>/<new>/g   - replace all <old> with <new>
 :%s/<old>/<new>/gc  - replace all <old> with <new> with confirmations
@@ -52,6 +54,7 @@ operations:
 <op>w       - apply <op> on the current word
 <op><n>w    - apply <op> on <n> words
 <S>+<op>    - apply <op> to the end of the current line
+<op>$       - apply <op> to the end of the current line
 
 other:
 
@@ -72,10 +75,6 @@ a       - enter insert mode and append after the cursor
 I       - enter insert mode at first character of current line
 A       - enter insert mode at last character of current line
 o       - insert line below and enter insert mode
-
-cc      - delete current line and enter insert mode
-C       - delete until enter of line and enter insert mode
-
 v       - enter visual mode and highlight characters
 V       - enter visual mode and highlight lines
 <C>+v   - enter visual block mode
@@ -110,8 +109,10 @@ U       - undo all changes on current line
 <C>+r   - redo
 .       - repeat last command
 <C>+g   - show file status
+<C>+e   - scroll up by one line (extra line)
+zz      - center window on cursor
 
-m<c>    - set a marker <c>
+m<c>    - set a marker <c> (:marks)
 '<c>    - move cursor to the line marked by <c>
 
 :!<cmd> - execute an external command <cmd>
