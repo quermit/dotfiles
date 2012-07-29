@@ -4,13 +4,24 @@ VIM - SHORTCUTS AND COMMANDS
 FILES
 -----
 
-:q      - quit
-:w      - save changes
-:q!     - quit without saving changes
-:qw     - save changes and quit
-:w <fn> - write buffer to file <fn>
-:r <fn> - read file <fn> into buffer
-:e <fn> - edit file <fn>
+:q              - quit
+:w              - save changes
+:q!             - quit without saving changes
+:qw             - save changes and quit
+:w <fn>         - write buffer to file <fn>
+:r <fn>         - read file <fn> into buffer
+:e <fn>         - edit file <fn>
+:sav <fn>       - save the file under a new name <fn>
+:f <fn>         - change the file name to <fn>
+
+BUFFERS
+-------
+
+:bn         - go to next buffer (:next)
+:bp         - go to previous buffer (:prev)
+:bd         - delete a buffer (close file)
+:buffers    - list of open buffers (:ls, :files)
+:b<n>       - switch to a buffer number <n>
 
 MOVEMENT
 --------
@@ -18,6 +29,7 @@ MOVEMENT
 gg      - move to first line of file
 G       - move to last line of file
 :<n>    - move to line number <n> (alternatively: <n>gg)
+<n>%    - move to the place in file
 
 SEARCH
 ------
@@ -62,7 +74,7 @@ r           - replace single character under cursor
 x           - delete single character under cursor
 J           - join current and next line
 
-~           - switch case in highlighted text
+~           - switch case in highlighted text (u, U)
 d           - delete highlighted text
 y           - copy highlighted text
 p           - paste copied text
@@ -85,35 +97,62 @@ o       - switch cursor in highlighted block (visual mode)
 WINDOWS
 -------
 
-<C>+w s     - split current window horizontally
-<C>+w v     - split current window vertically
-<C>+w c     - close current window
+<C>+w s     - split current window horizontally (:split)
+<C>+w v     - split current window vertically (:vsplit)
+<C>+w c     - close current window (:close)
 <C>+w <m>   - move to window according to motion <m>
 <C>+w w     - switch between windows
+<C>+w o     - close all windows, except for the current (:only)
+<C>+w n     - open a new window (:new)
+:wall       - write all modified files
+:wqall      - write all modified files and quit
 
-BUFFERS
--------
+TABS
+----
 
-:e file     - edit a file in a new buffer
-:bn         - go to next buffer
-:bp         - go to previous buffer
-:bd         - delete a buffer (close file)
-:buffers    - list of open buffers
-:b<n>       - switch to a buffer number <n>
+:tabedit    - open a file in a new tab
+:tabnew     - open a new tab
+gt          - move to the next tab (:tabn)
+gT          - move to the previous tab (:tabp)
+:tabs       - list of tabs and windows
+
+DIFFERENCES
+-----------
+
+:vert diffs <fn>    - open <fn> and enter diff mode 
+]c                  - go to the next change
+[c                  - go to the previous change
+dp                  - put difference
+do                  - obtain difference
+:diffupdate         - update highlighting
+
+VIM PARAMETERS
+--------------
+
+vim -o file1 file2      - open files in horizontally split windows
+vim -O file1 file2      - open files in vertically split windows
+vim -R                  - (view) open in read only mode
+vim -M                  - open in no-modifiable mode
+vim -r file             - recover a file
+vimdiff file1 file2     - view differences
 
 MISC
 ----
 
-u       - undo
-U       - undo all changes on current line
-<C>+r   - redo
-.       - repeat last command
-<C>+g   - show file status
-<C>+e   - scroll up by one line (extra line)
-zz      - center window on cursor
-
-m<c>    - set a marker <c> (:marks)
-'<c>    - move cursor to the line marked by <c>
-
-:!<cmd> - execute an external command <cmd>
+u               - undo
+U               - undo all changes on current line
+<C>+r           - redo
+.               - repeat last command
+<C>+g           - show file status
+<C>+e           - scroll up by one line (extra line)
+zz              - center window on cursor
+m<c>            - set a marker <c>; uppercase for global mark (:marks)
+'<c>            - move cursor to the line marked by <c> (` for exact position)
+'.              - move cursor to the last change
+"<r>            - specify a register <r> (i.e. "ay -> "ap)
+:!<cmd>         - execute an external command <cmd>
+q<c>            - start recording the macro <c>
+q               - stop recording the macro
+<n>@<c>         - execute the macro <c> <n> number times
+:grep <s> <f>   - search for the string <s> in files <f>
 
