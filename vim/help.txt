@@ -79,6 +79,10 @@ d           - delete highlighted text
 y           - copy highlighted text
 p           - paste copied text
 
+>>          - indent the current line
+<<          - unindent the current line
+==          - indent the current line according to indentation settings
+
 MODES
 -----
 
@@ -93,6 +97,7 @@ V       - enter visual mode and highlight lines
 o       - switch cursor in highlighted block (visual mode)
 >       - indent highlighted text
 <       - unindent highlighted text
+:!sort  - sort highlighted lines
 
 WINDOWS
 -------
@@ -104,8 +109,8 @@ WINDOWS
 <C>+w w     - switch between windows
 <C>+w o     - close all windows, except for the current (:only)
 <C>+w n     - open a new window (:new)
-:wall       - write all modified files
-:wqall      - write all modified files and quit
+:way        - write all modified files
+:wqa        - write all modified files and quit (:xa - exit all)
 
 TABS
 ----

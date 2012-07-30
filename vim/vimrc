@@ -6,48 +6,48 @@ silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
 " general
-syntax on               " syntax highlighting
-scriptencoding utf-8
+syntax on                   " syntax highlighting
+scriptencoding utf-8        " utf-8 encoding
 filetype plugin indent on   " filetype detection
-set mouse=a
-set history=1000
-set backspace=indent,eol,start
-set noerrorbells
-set spell
+set mouse=a                 " enable mouse everywhere
+set history=1000            " store a huge history
+set backspace=indent,eol,start  " allow backspacing over everything
+set noerrorbells            " disable error bell
+set spell                   " enable spell checking
 
 " UI
-set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=16
-colorscheme solarized
+set background=dark         " dark background
+let g:solarized_termtrans=1     " transparent background
+let g:solarized_termcolors=16   " 16 colours
+colorscheme solarized           " set color scheme
 
 if has('cmdline_info')
-    set ruler                   " show the ruler - cursor position
+    set ruler               " show the ruler - cursor position
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-    set showcmd                 " show partial commands in status line and
-                                " selected characters/lines in visual mode
+    set showcmd             " show partial commands in status line and
+                            " selected characters/lines in visual mode
 endif
 
 if has('statusline')
-    set laststatus=2
-    " Broken down into easily includeable segments
-    set statusline=%<%f\    " Filename
-    set statusline+=%w%h%m%r " Options
-    set statusline+=%{fugitive#statusline()} "  Git Hotness
+    set laststatus=2            " always show status line
+    " broken down into easily includeable segments
+    set statusline=%<%f\        " filename
+    set statusline+=%w%h%m%r    " options
+    set statusline+=%{fugitive#statusline()} " git hotness
     set statusline+=\ [%{&ff}/%Y]            " filetype
-    set statusline+=\ [%{getcwd()}]          " current dir
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    set statusline+=\ [%{getcwd()}]          " current directory
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " right aligned file nav info
 endif
 
-set showmode
-set showmatch
+set showmode        " display current mode
+set showmatch       " show matching brackets etc.
 set incsearch       " search as you type
 set hlsearch        " highlight matches
 set ignorecase      " case insensitive search
-set cursorline
+set cursorline      " highlight current line
 set number          " display a line number in front of every line
-set scrolljump=5
-set scrolloff=3
+set scrolljump=5    " lines to scroll when cursor leaves window
+set scrolloff=3     " minimum lines to keep above and below cursor
 set list            " display whitespace characters
 " setup a way of showing whitespace characters
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
@@ -55,17 +55,18 @@ set listchars=tab:,.,trail:.,extends:#,nbsp:.
 " formatting
 set nowrap              " do not wrap the text
 set autoindent          " use the indent of the previous line
-set smartindent
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set softtabstop=4
-set pastetoggle=<F12>
+set smartindent         " do smart autoindenting
+set shiftwidth=4        " use indents of 4 spaces
+set expandtab           " expand tabs to spaces
+set tabstop=4           " number of spaces that a tab counts for
+set softtabstop=4       " tabstop for editing operations
 
 " mappings
-let mapleader=','
-nnoremap ; :
-cmap cwd lcd %:p:h
-nmap <F6> :set spell!<CR>
-nmap <F7> :TagbarToggle<CR>
+let mapleader=','       " alternative leader character
+nnoremap ; :            " alternative character for commands
+cmap cwd lcd %:p:h      " change CWD to that of current file
+
+nmap <F6> :set spell!<CR>   " F6 toggles spell checking
+nmap <F7> :TagbarToggle<CR> " F7 toggles tagbar visibility
+set pastetoggle=<F12>   " F12 toggles paste option
 
