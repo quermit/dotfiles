@@ -62,11 +62,15 @@ set tabstop=4           " number of spaces that a tab counts for
 set softtabstop=4       " tabstop for editing operations
 
 " mappings
-let mapleader=','       " alternative leader character
-nnoremap ; :            " alternative character for commands
-cmap cwd lcd %:p:h      " change CWD to that of current file
+" alternative leader character
+let mapleader=','
+" alternative character for commands
+nnoremap ; :
+" change CWD to that of current file
+cmap cwd lcd %:p:h
 
-nmap <F6> :set spell!<CR>   " F6 toggles spell checking
-nmap <F7> :TagbarToggle<CR> " F7 toggles tagbar visibility
+imap <c-space> <c-x><c-o>
+nmap <F6> :set spell!<CR>
+nmap <F7> :TagbarToggle<CR>
 set pastetoggle=<F12>   " F12 toggles paste option
 
