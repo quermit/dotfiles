@@ -160,4 +160,5 @@ q<c>            - start recording the macro <c>
 q               - stop recording the macro
 <n>@<c>         - execute the macro <c> <n> number times
 :grep <s> <f>   - search for the string <s> in files <f>
+<C>+x<C>+o      - omnicompetition
 

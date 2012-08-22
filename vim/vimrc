@@ -14,6 +14,7 @@ set history=1000            " store a huge history
 set backspace=indent,eol,start  " allow backspacing over everything
 set noerrorbells            " disable error bell
 set spell                   " enable spell checking
+set tags=~/.tags/tags       " ctags
 
 " UI
 set background=dark         " dark background
@@ -69,8 +70,9 @@ nnoremap ; :
 " change CWD to that of current file
 cmap cwd lcd %:p:h
 
-imap <c-space> <c-x><c-o>
-nmap <F6> :set spell!<CR>
-nmap <F7> :TagbarToggle<CR>
+inoremap <leader>, <c-x><c-o>
+nmap Tk :TaskList<CR>
+nmap Tt :TagbarToggle<CR>
+nmap Ts :set spell! spell?<CR>
 set pastetoggle=<F12>   " F12 toggles paste option
 
