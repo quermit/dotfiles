@@ -1,3 +1,5 @@
+[core]
+    excludesfile = /home/quermit/.gitexcludes
 [user]
     name = Przemyslaw Gajda
     email = quermit@gmail.com

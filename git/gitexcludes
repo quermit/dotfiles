@@ -1,0 +1,5 @@
+# List of files that should be excluded in every git repository.
+
+# vim swap files
+*.swp
+
