@@ -74,5 +74,5 @@ inoremap <leader>, <c-x><c-o>
 nmap Tk :TaskList<CR>
 nmap Tt :TagbarToggle<CR>
 nmap Ts :set spell! spell?<CR>
-set pastetoggle=<F12>   " F12 toggles paste option
+nmap Tp :set paste!<CR>
 
