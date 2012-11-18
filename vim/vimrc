@@ -9,11 +9,11 @@ silent! call pathogen#runtime_append_all_bundles()
 syntax on                   " syntax highlighting
 scriptencoding utf-8        " utf-8 encoding
 filetype plugin indent on   " filetype detection
-set mouse=a                 " enable mouse everywhere
+"set mouse=a                 " enable mouse everywhere
 set history=1000            " store a huge history
 set backspace=indent,eol,start  " allow backspacing over everything
 set noerrorbells            " disable error bell
-set spell                   " enable spell checking
+"set spell                   " enable spell checking
 set tags=~/.tags/tags       " ctags
 
 " UI
